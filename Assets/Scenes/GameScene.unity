@@ -240,7 +240,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: -30.318476, z: 0, w: -33.843956}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -269,7 +269,7 @@ GameObject:
   m_Layer: 0
   m_Name: Obj_Table
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -350,7 +350,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: table
-  actions: []
+  actions:
+  - Read paper 1
+  - Read paper 2
+  - Read paper 3
+  - Read paper 4
   player: {fileID: 1693828524}
   menu: {fileID: 1943024160}
   questManager: {fileID: 742401964}
@@ -814,6 +818,7 @@ MonoBehaviour:
   - Look at
   - Use computer
   - Look under
+  - Leave
   player: {fileID: 1693828524}
   menu: {fileID: 1943024160}
   questManager: {fileID: 742401964}
@@ -3542,7 +3547,7 @@ GameObject:
   m_Layer: 0
   m_Name: Obj_Armor_02
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -3649,7 +3654,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: armure
-  actions: []
+  actions:
+  - Take the halberd
   player: {fileID: 1693828524}
   menu: {fileID: 1943024160}
   questManager: {fileID: 742401964}
@@ -4844,7 +4850,7 @@ GameObject:
   m_Layer: 0
   m_Name: Obj_Bed
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4989,7 +4995,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: lit
-  actions: []
+  actions:
+  - Sleep
+  - Look under
   player: {fileID: 1693828524}
   menu: {fileID: 1943024160}
   questManager: {fileID: 742401964}
@@ -5422,7 +5430,7 @@ GameObject:
   m_Layer: 0
   m_Name: Obj_Armor
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -5528,8 +5536,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be29aad07493a6a4f9d13350aecfdadf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: armure2
-  actions: []
+  name: armure
+  actions:
+  - Take the halberd
   player: {fileID: 1693828524}
   menu: {fileID: 1943024160}
   questManager: {fileID: 742401964}
@@ -6358,6 +6367,7 @@ GameObject:
   - component: {fileID: 1676275917}
   - component: {fileID: 1676275916}
   - component: {fileID: 1676275920}
+  - component: {fileID: 1676275921}
   m_Layer: 5
   m_Name: DialogBox
   m_TagString: Untagged
@@ -6457,6 +6467,103 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82c6e75bdc8516c46a82ce12ddcae4f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sound: {fileID: 1676275921}
+--- !u!82 &1676275921
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676275915}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: fff0a56a3da689948b88745a1e853460, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.114
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 121
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1693828524
 GameObject:
   m_ObjectHideFlags: 0
@@ -6666,6 +6773,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1834281512}
   - component: {fileID: 1834281511}
+  - component: {fileID: 1834281513}
   m_Layer: 0
   m_Name: Map
   m_TagString: Untagged
@@ -6701,6 +6809,102 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1834281513
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834281510}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: e57dab1a28119cf4d8fbbc50368a5f2c, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.093
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1916835146
 GameObject:
   m_ObjectHideFlags: 0
@@ -6716,7 +6920,7 @@ GameObject:
   m_Layer: 0
   m_Name: Obj_Fireplace
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -6823,7 +7027,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: cheminee
-  actions: []
+  actions:
+  - Light the fire
+  - Leave
   player: {fileID: 1693828524}
   menu: {fileID: 1943024160}
   questManager: {fileID: 742401964}
@@ -7116,7 +7322,7 @@ GameObject:
   m_Layer: 0
   m_Name: Obj_Nightstand_02
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -7197,7 +7403,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: chevet2
-  actions: []
+  actions:
+  - Search the bedside table
+  - Search in the book
+  - Leave
   player: {fileID: 1693828524}
   menu: {fileID: 1943024160}
   questManager: {fileID: 742401964}

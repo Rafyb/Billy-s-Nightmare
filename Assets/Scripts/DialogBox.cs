@@ -11,6 +11,8 @@ public class DialogBox : MonoBehaviour
     private float typingSpeed;
     private int typingIdx;
     private char[] waitingTexte;
+    public AudioSource sound;
+    private bool soundit;
 
     void Start()
     {
@@ -19,6 +21,7 @@ public class DialogBox : MonoBehaviour
         typingTime = 0;
         typingIdx = 0;
         typingSpeed = 0.05f;
+        soundit = false;
         gameObject.SetActive(false);
     }
 
@@ -36,6 +39,13 @@ public class DialogBox : MonoBehaviour
                     typingIdx = 0;
                     typingSpeed = 1.5f;
                 } else {
+                    if (soundit) {
+                        sound.Play();
+                        soundit = false;
+                    } else
+                    {
+                        soundit = true;
+                    }
                     texte.text += waitingTexte[typingIdx++];
                 }
             } else {
@@ -51,6 +61,7 @@ public class DialogBox : MonoBehaviour
         gameObject.SetActive(true);
         waitingTexte = str.ToCharArray();
         texte.text = "";
+        typingIdx = 0;
         typingSpeed = 0.05f;
     }
 }

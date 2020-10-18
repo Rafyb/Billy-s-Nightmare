@@ -17,27 +17,37 @@ public class ClickToMove : MonoBehaviour
 
     private Vector3 velocity = Vector3.zero;
     private Vector3 targetPosition;
-    private bool isMoving = false; 
+    private bool isMoving = false;
+    private float timeStart;
 
     void Start()
     {
-        
+        timeStart = 0;
     }
 
     void Update()
     {
-        if(Input.GetMouseButton(0) && menu.getSelectedObject() == null)
+        if(timeStart < 2.3f)
         {
-            SetTargetPosition();
+            timeStart += Time.deltaTime;
+        } else
+        {
+            if (Input.GetMouseButton(0) && menu.getSelectedObject() == null)
+            {
+                SetTargetPosition();
+            }
+
+            if (isMoving)
+            {
+                Move();
+                animator.SetBool("moving", true);
+            }
+            else
+            {
+                animator.SetBool("moving", false);
+            }
         }
 
-        if(isMoving)
-        {
-            Move();
-            animator.SetBool("moving",true);
-        } else {
-            animator.SetBool("moving",false);
-        }
     }
 
     public void resetPlayerPosition()
